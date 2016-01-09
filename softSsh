@@ -1,0 +1,6 @@
+echo "ui customer jenkins rest" | grep -F -q -w "$1" && USER="ec2-user" || USER="ubuntu"
+
+URL="$USER@$1.softblade.net"
+COMMAND="ssh -o ServerAliveInterval=60 -i /Users/rlexvold/SoftBlade/robert.pem $URL"
+echo $COMMAND
+$COMMAND

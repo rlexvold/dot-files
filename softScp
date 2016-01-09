@@ -1,0 +1,6 @@
+echo "ui customer jenkins rest" | grep -F -q -w "$1" && USER="ec2-user" || USER="ubuntu"
+
+URL="$USER@$1.softblade.net"
+COMMAND="scp -i /Users/rlexvold/SoftBlade/robert.pem $2 $URL:$3"
+echo $COMMAND
+$COMMAND
